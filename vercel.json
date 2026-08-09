@@ -9,6 +9,11 @@
       "source": "/traegt-sie-sich",
       "destination": "/traegt-sie-sich/",
       "permanent": true
+    },
+    {
+      "source": "/nebenkosten",
+      "destination": "/nebenkosten/",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -27,6 +32,14 @@
     {
       "source": "/traegt-sie-sich/:path*",
       "destination": "https://tool-traegt-sie-sich.vercel.app/:path*"
+    },
+    {
+      "source": "/nebenkosten/",
+      "destination": "https://tool-nebenkosten.vercel.app/"
+    },
+    {
+      "source": "/nebenkosten/:path*",
+      "destination": "https://tool-nebenkosten.vercel.app/:path*"
     }
   ]
 }
