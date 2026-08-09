@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/budget",
+      "destination": "/budget/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/budget/:path*",
+      "destination": "https://tool-budgetrechner.vercel.app/:path*"
+    }
+  ]
+}
