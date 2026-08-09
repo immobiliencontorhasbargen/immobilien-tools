@@ -8,6 +8,10 @@
   ],
   "rewrites": [
     {
+      "source": "/budget/",
+      "destination": "https://tool-budgetrechner.vercel.app/"
+    },
+    {
       "source": "/budget/:path*",
       "destination": "https://tool-budgetrechner.vercel.app/:path*"
     }
