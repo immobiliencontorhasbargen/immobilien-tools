@@ -4,6 +4,11 @@
       "source": "/budget",
       "destination": "/budget/",
       "permanent": true
+    },
+    {
+      "source": "/traegt-sie-sich",
+      "destination": "/traegt-sie-sich/",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -14,6 +19,14 @@
     {
       "source": "/budget/:path*",
       "destination": "https://tool-budgetrechner.vercel.app/:path*"
+    },
+    {
+      "source": "/traegt-sie-sich/",
+      "destination": "https://tool-traegt-sie-sich.vercel.app/"
+    },
+    {
+      "source": "/traegt-sie-sich/:path*",
+      "destination": "https://tool-traegt-sie-sich.vercel.app/:path*"
     }
   ]
 }
