@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coole Tools — immobilien contor hasbargen</title>
+<meta name="description" content="Der Immobilien-Kompass von immobilien contor hasbargen: Rechner, Finanzierung und Wissen für Ihre Immobilienentscheidungen auf Usedom.">
+<title>Immobilien-Kompass | immobilien contor hasbargen</title>
 <link rel="stylesheet" href="styles.css">
 
 <!-- Usercentrics CMP — vor allen zustimmungspflichtigen Skripten laden -->
@@ -19,184 +20,56 @@ gtag('config', 'G-9QD3E7ZMHM');
 </script>
 </head>
 <body>
-
 <header class="site-header">
 <a href="https://www.immobilien-kaiserbaeder.de/"><img src="assets/logo.png" alt="immobilien contor hasbargen"></a>
 <nav>
 <a href="https://www.immobilien-kaiserbaeder.de/kaufen/">Kaufen</a>
 <a href="https://www.immobilien-kaiserbaeder.de/verkaufen/">Verkaufen</a>
-<a href="#" class="active">Coole Tools</a>
+<a href="#" class="active">Immobilien-Kompass</a>
 <a href="https://www.immobilien-kaiserbaeder.de/ueber-uns/">Über uns</a>
 <a href="https://www.immobilien-kaiserbaeder.de/kontakt/">Kontakt</a>
 </nav>
 <a class="phone" href="tel:+493837880888">+49 38378 80888</a>
 </header>
 
-<div class="backlink-wrap">
-<a class="backlink" href="https://www.immobilien-kaiserbaeder.de/"><span>←</span> Zurück zur Hauptseite</a>
-</div>
+<div class="backlink-wrap"><a class="backlink" href="https://www.immobilien-kaiserbaeder.de/"><span>←</span> Zurück zur Hauptseite</a></div>
 
+<main>
 <section class="title-section">
-<div class="eyebrow">Coole Tools</div>
-<h1>[TOOL-TITEL — z.B. Budgetrechner]</h1>
-<p>[KURZE EINLEITUNG — ein bis zwei Sätze, was dieses Tool berechnet und wofür es gut ist.]</p>
+<div class="eyebrow">Immobilien contor hasbargen</div>
+<h1>Immobilien-Kompass</h1>
+<p>Werkzeuge, Rechner und Wissen für bessere Entscheidungen rund um Ihre Immobilie auf Usedom.</p>
 </section>
 
-<div class="variant-switch-wrap">
-<label for="variantSwitch">Layoutvariante</label>
-<select id="variantSwitch" class="variant-switch">
-<option value="rechner" selected>Rechner</option>
-<option value="fragestrecke">Fragestrecke</option>
-<option value="karte">Karte &amp; Simulation</option>
-</select>
-</div>
+<section class="compass-section" aria-labelledby="compass-heading">
+<h2 id="compass-heading">Was möchten Sie herausfinden?</h2>
+<div class="compass-grid">
+<article class="compass-card">
+<div class="card-kicker">Wirtschaftlichkeit</div>
+<h3>Trägt sich meine Immobilie?</h3>
+<p>Prüfen Sie, welche Einnahmen, Kosten und Rahmenbedingungen bei Ihrer Immobilie eine Rolle spielen.</p>
+<span class="status">In Vorbereitung</span>
+</article>
 
-<!-- ===== Variante 1: Rechner ===== -->
-<div class="variant-panel active" data-variant="rechner">
-<section class="rechner-wrap">
-<div class="rechner-grid">
-<div class="rechner-form">
-<div class="label">Deine Angaben</div>
-<div class="rechner-fields">
-<div class="field">
-<label for="rechnerInput1">[Eingabe, z.B. Kaufpreis]</label>
-<input id="rechnerInput1" type="text" placeholder="z.B. 350.000 €">
-</div>
-<div class="field">
-<label for="rechnerSelect1">[Auswahl, z.B. Objektart]</label>
-<select id="rechnerSelect1">
-<option>Haus</option>
-<option>Wohnung</option>
-<option>Grundstück</option>
-</select>
-</div>
-</div>
-<div class="slider-block">
-<div class="slider-head"><span>[Schieberegler, z.B. Eigenkapital]</span><strong id="rechnerSliderVal">40 %</strong></div>
-<input id="rechnerSlider" type="range" min="0" max="100" value="40">
-<div class="slider-labels"><span>0 %</span><span>100 %</span></div>
-</div>
-<div style="display:flex;justify-content:flex-end;margin-top:4px">
-<button class="btn btn-primary" type="button">Jetzt berechnen</button>
-</div>
-</div>
-<div class="rechner-result">
-<div class="eyebrow">Dein Ergebnis</div>
-<div class="value">[ERGEBNISWERT]</div>
-<p>[Kurze Erläuterung, wie das Ergebnis zustande kommt oder was der nächste Schritt ist.]</p>
-<button class="btn btn-outline" type="button" style="width:100%">Ergebnis per E-Mail sichern</button>
-</div>
+<article class="compass-card compass-card-featured">
+<div class="card-kicker">Rechner &amp; Finanzierung</div>
+<h3>Budget-Rechner</h3>
+<p>Ermitteln Sie Ihr persönliches Kaufpreis-Budget auf Basis Ihrer monatlichen Möglichkeiten, Ihres Eigenkapitals und Ihrer Finanzierungskonditionen.</p>
+<a class="card-action" href="https://budget.immobilien-kaiserbaeder.de">Budget berechnen <span aria-hidden="true">→</span></a>
+</article>
+
+<article class="compass-card">
+<div class="card-kicker">Informationen</div>
+<h3>Wissen &amp; Ratgeber</h3>
+<p>Verständliche Informationen zu Kauf, Verkauf, Finanzierung und Immobilienentscheidungen auf Usedom.</p>
+<span class="status">In Vorbereitung</span>
+</article>
 </div>
 </section>
-</div>
-
-<!-- ===== Variante 2: Fragestrecke ===== -->
-<div class="variant-panel" data-variant="fragestrecke">
-<section class="fs-wrap">
-<div class="fs-card">
-<div>
-<div class="fs-progress-head"><span id="fsStepLabel">Frage 1 von 3</span><span class="pct" id="fsProgressPct">33%</span></div>
-<div class="fs-progress-track"><div class="fs-progress-bar" id="fsProgressBar"></div></div>
-</div>
-
-<div class="fs-question active" data-question="0">
-<h2>[FRAGE 1 — z.B. Suchst du eher Haus oder Wohnung?]</h2>
-<div class="fs-options">
-<div class="fs-option">Haus</div>
-<div class="fs-option">Wohnung</div>
-<div class="fs-option">Beides möglich</div>
-</div>
-</div>
-
-<div class="fs-question" data-question="1">
-<h2>[FRAGE 2 — z.B. Wie schnell soll es gehen?]</h2>
-<div class="fs-options">
-<div class="fs-option">Sofort</div>
-<div class="fs-option">In 3–6 Monaten</div>
-<div class="fs-option">Noch offen</div>
-</div>
-</div>
-
-<div class="fs-question" data-question="2">
-<h2>[FRAGE 3 — z.B. Wo soll's hingehen?]</h2>
-<div class="fs-options">
-<div class="fs-option">Ahlbeck</div>
-<div class="fs-option">Heringsdorf</div>
-<div class="fs-option">Bansin</div>
-</div>
-</div>
-
-<div class="fs-contact" id="fsContact">
-<h2>Fast geschafft — wie erreichen wir dich?</h2>
-<div class="fs-contact-fields">
-<div class="field">
-<label for="fsName">Name</label>
-<input id="fsName" type="text" placeholder="Vor- und Nachname">
-</div>
-<div class="field">
-<label for="fsEmail">E-Mail</label>
-<input id="fsEmail" type="email" placeholder="name@beispiel.de">
-</div>
-</div>
-<div style="display:flex;justify-content:center;margin-top:8px">
-<button class="btn btn-primary" type="button">Match anfordern</button>
-</div>
-</div>
-
-<div class="fs-nav" id="fsNav">
-<button class="btn btn-outline" id="fsBack" type="button">Zurück</button>
-<button class="btn btn-primary" id="fsNext" type="button">Weiter</button>
-</div>
-</div>
-</section>
-</div>
-
-<!-- ===== Variante 3: Karte & Simulation ===== -->
-<div class="variant-panel" data-variant="karte">
-<section class="karte-wrap">
-<div class="map-slot">[KARTENANSICHT — z.B. Lage, Sonnenverlauf, Umgebung]</div>
-
-<div class="slider-panel">
-<div class="slider-head"><span>[Regler, z.B. Uhrzeit]</span><strong id="mapSliderVal">14:00</strong></div>
-<input id="mapSlider" type="range" min="0" max="24" value="14">
-<div class="slider-labels"><span>0:00</span><span>24:00</span></div>
-</div>
-
-<div class="karte-body">
-<div class="kennzahlen">
-<div class="kennzahl-card"><div class="label">[Kennzahl 1]</div><div class="value">[WERT]</div></div>
-<div class="kennzahl-card"><div class="label">[Kennzahl 2]</div><div class="value">[WERT]</div></div>
-<div class="kennzahl-card"><div class="label">[Kennzahl 3]</div><div class="value">[WERT]</div></div>
-<div class="ergebnis-card">
-<div class="eyebrow">Ergebnis &amp; Hinweis</div>
-<p>[Kurzes Ergebnis der Simulation und ein Hinweis, wie belastbar dieser Wert ist bzw. was er nicht ersetzt.]</p>
-</div>
-</div>
-<div class="settings-panel">
-<div class="label">Einstellungen</div>
-<div class="field">
-<label for="karteSelect1">[Auswahl, z.B. Datum]</label>
-<select id="karteSelect1">
-<option>Haus</option>
-<option>Wohnung</option>
-<option>Grundstück</option>
-</select>
-</div>
-<div class="switch-row">
-<span>[Option, z.B. Verschattung anzeigen]</span>
-<label class="switch">
-<input type="checkbox">
-<span class="track"></span>
-<span class="thumb"></span>
-</label>
-</div>
-</div>
-</div>
-</section>
-</div>
+</main>
 
 <section class="contact-section">
-<h2>Fragen zu deinem Ergebnis?</h2>
+<h2>Fragen zu Ihrer Entscheidung?</h2>
 <p>Kein Callcenter. Kein Chatbot. Nur wir.</p>
 <div class="contact-actions">
 <a href="tel:+493837880888" class="btn btn-primary">Anrufen</a>
@@ -213,14 +86,10 @@ gtag('config', 'G-9QD3E7ZMHM');
 </div>
 <div class="footer-right">
 <a class="revoke-btn" href="https://crm.onoffice.de/smart/app/smart/cancelation/WebCancellationForm/AppWebCancellationFormView.php?params=-pheqH7NOXMajpC24IaxrN5ufpf2w0bq90ZsPUhsJKjCwmlWq0JrxDvkI37lA3u-UfAuZYjLXqMMpbKIcgVa7fnakytIbzWSuKXGMH9dVoG6HIcO-fZuGo66vsYeqfgeri-D4ncYmTa470WhRs4BDKkfXoG50BB0KmIQ6T-lNEN7eHs2jUqlECQnF7K5RfYOICsIsn1Vmz6KP3NjSLbbOQ">Maklervertrag widerrufen</a>
-<div class="legal-links">
-<div class="row"><a href="https://www.immobilien-kaiserbaeder.de/impressum/">Impressum</a><a href="https://www.immobilien-kaiserbaeder.de/datenschutz/">Datenschutz</a></div>
-<div>© 2026 Immobilien contor hasbargen</div>
-</div>
+<div class="legal-links"><div class="row"><a href="https://www.immobilien-kaiserbaeder.de/impressum/">Impressum</a><a href="https://www.immobilien-kaiserbaeder.de/datenschutz/">Datenschutz</a></div><div>© 2026 Immobilien contor hasbargen</div></div>
 </div>
 </div>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
