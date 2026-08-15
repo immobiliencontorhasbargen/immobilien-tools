@@ -1,4 +1,5 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
       "source": "/budget",
@@ -17,11 +18,6 @@
     },
     {
       "source": "/kaeufer-speeddating",
-      "destination": "/kaeufer-speeddating/",
-      "permanent": true
-    },
-    {
-      "source": "/kaeufer-speedating",
       "destination": "/kaeufer-speeddating/",
       "permanent": true
     }
@@ -53,10 +49,18 @@
     },
     {
       "source": "/kaeufer-speeddating/",
-      "destination": "https://goodies-theta.vercel.app/kaeufer-speedating/"
+      "destination": "https://goodies-theta.vercel.app/kaeufer-speeddating/"
     },
     {
       "source": "/kaeufer-speeddating/:path*",
+      "destination": "https://goodies-theta.vercel.app/kaeufer-speeddating/:path*"
+    },
+    {
+      "source": "/kaeufer-speedating/",
+      "destination": "https://goodies-theta.vercel.app/kaeufer-speedating/"
+    },
+    {
+      "source": "/kaeufer-speedating/:path*",
       "destination": "https://goodies-theta.vercel.app/kaeufer-speedating/:path*"
     }
   ]
