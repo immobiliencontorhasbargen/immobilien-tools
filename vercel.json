@@ -14,6 +14,11 @@
       "source": "/nebenkosten",
       "destination": "/nebenkosten/",
       "permanent": true
+    },
+    {
+      "source": "/kaeufer-speeddating",
+      "destination": "/kaeufer-speeddating/",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -40,6 +45,22 @@
     {
       "source": "/nebenkosten/:path*",
       "destination": "https://tool-nebenkosten.vercel.app/:path*"
+    },
+    {
+      "source": "/kaeufer-speeddating/",
+      "destination": "https://goodies-theta.vercel.app/kaeufer-speeddating/"
+    },
+    {
+      "source": "/kaeufer-speeddating/:path*",
+      "destination": "https://goodies-theta.vercel.app/kaeufer-speeddating/:path*"
+    },
+    {
+      "source": "/kaeufer-speedating/",
+      "destination": "https://goodies-theta.vercel.app/kaeufer-speedating/"
+    },
+    {
+      "source": "/kaeufer-speedating/:path*",
+      "destination": "https://goodies-theta.vercel.app/kaeufer-speedating/:path*"
     }
   ]
 }
