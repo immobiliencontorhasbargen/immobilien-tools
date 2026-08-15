@@ -1,24 +1,63 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "builds": [
-    { "src": "kaeufer-speeddating/index.html", "use": "@vercel/static" }
-  ],
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/kaeufer-speeddating",
-      "destination": "/kaeufer-speeddating/index.html"
+      "source": "/budget",
+      "destination": "/budget/",
+      "permanent": true
     },
     {
-      "source": "/kaeufer-speeddating/",
-      "destination": "/kaeufer-speeddating/index.html"
+      "source": "/traegt-sie-sich",
+      "destination": "/traegt-sie-sich/",
+      "permanent": true
+    },
+    {
+      "source": "/nebenkosten",
+      "destination": "/nebenkosten/",
+      "permanent": true
+    },
+    {
+      "source": "/kaeufer-speeddating",
+      "destination": "/kaeufer-speeddating/",
+      "permanent": true
     },
     {
       "source": "/kaeufer-speedating",
-      "destination": "/kaeufer-speedating/index.html"
+      "destination": "/kaeufer-speeddating/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/budget/",
+      "destination": "https://tool-budgetrechner.vercel.app/"
     },
     {
-      "source": "/kaeufer-speedating/",
-      "destination": "/kaeufer-speedating/index.html"
+      "source": "/budget/:path*",
+      "destination": "https://tool-budgetrechner.vercel.app/:path*"
+    },
+    {
+      "source": "/traegt-sie-sich/",
+      "destination": "https://tool-traegt-sie-sich.vercel.app/"
+    },
+    {
+      "source": "/traegt-sie-sich/:path*",
+      "destination": "https://tool-traegt-sie-sich.vercel.app/:path*"
+    },
+    {
+      "source": "/nebenkosten/",
+      "destination": "https://tool-nebenkosten.vercel.app/"
+    },
+    {
+      "source": "/nebenkosten/:path*",
+      "destination": "https://tool-nebenkosten.vercel.app/:path*"
+    },
+    {
+      "source": "/kaeufer-speeddating/",
+      "destination": "https://goodies-theta.vercel.app/kaeufer-speedating/"
+    },
+    {
+      "source": "/kaeufer-speeddating/:path*",
+      "destination": "https://goodies-theta.vercel.app/kaeufer-speedating/:path*"
     }
   ]
 }
