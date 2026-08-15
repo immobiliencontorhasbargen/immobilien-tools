@@ -49,11 +49,7 @@
     },
     {
       "source": "/kaeufer-speeddating/",
-      "destination": "https://goodies-theta.vercel.app/kaeufer-speeddating/"
-    },
-    {
-      "source": "/kaeufer-speeddating/:path*",
-      "destination": "https://goodies-theta.vercel.app/kaeufer-speeddating/:path*"
+      "destination": "/kaeufer-speeddating/index.html"
     },
     {
       "source": "/kaeufer-speedating/",
