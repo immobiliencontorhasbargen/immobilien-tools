@@ -20,6 +20,11 @@
       "source": "/kaeufer-speeddating",
       "destination": "/kaeufer-speeddating/",
       "permanent": true
+    },
+    {
+      "source": "/abmelden",
+      "destination": "/abmelden/",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -50,6 +55,10 @@
     {
       "source": "/kaeufer-speeddating/",
       "destination": "/kaeufer-speeddating/index.html"
+    },
+    {
+      "source": "/abmelden/",
+      "destination": "/abmelden/index.html"
     },
     {
       "source": "/kaeufer-speedating/",
