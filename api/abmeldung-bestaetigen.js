@@ -1,9 +1,9 @@
-const { getPendingRequest, updateRequest } = require('../lib/supabase');
+const { getPendingRequest, updateRequest, sha256 } = require('../lib/supabase');
 const { disableExposeSending, createUnsubscribeActivity } = require('../lib/onoffice');
 const { sendEmail } = require('../lib/resend');
-const { sha256 } = require('../lib/supabase');
 
 const json = (res, status, body) => res.status(status).json(body);
+const escapeHtml = value => String(value ?? '').replace(/[&<>\"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;', "'": '&#39;' }[char]));
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST' && req.method !== 'GET') return json(res, 405, { message: 'Methode nicht erlaubt.' });
@@ -24,14 +24,16 @@ module.exports = async function handler(req, res) {
       throw error;
     }
 
-    const internalRecipient = process.env.RESEND_INTERNAL_NOTIFICATION_EMAIL;
-    if (internalRecipient) {
-      await sendEmail({
-        to: internalRecipient,
-        subject: `Abmeldung Immobilienvorschläge: ${request.address_name || request.email_normalized}`,
-        html: `<p>Eine Abmeldung wurde über das Käufer-Speed-Dating bestätigt.</p><p><strong>Name:</strong> ${request.address_name || 'unbekannt'}<br><strong>E-Mail:</strong> ${request.email_normalized}<br><strong>onOffice-Adresse:</strong> ${request.address_id}</p><p>Der automatische Exposéversand wurde beendet und die Aktivität in onOffice dokumentiert.</p>`
-      });
-    }
+    const internalRecipient = process.env.RESEND_INTERNAL_NOTIFICATION_EMAIL || 'anfragen@immobilien-kaiserbaeder.de';
+    const displayName = request.address_name || 'Kontakt';
+    const internalHtml = `<div style="font-family:Arial,Helvetica,sans-serif;color:#2F343A"><p style="color:#A47D39;font-weight:bold;letter-spacing:1px;text-transform:uppercase">Käufer-Speed-Dating</p><h2>Abmeldung bestätigt</h2><p><strong>Name:</strong> ${escapeHtml(displayName)}<br><strong>E-Mail:</strong> ${escapeHtml(request.email_normalized)}<br><strong>onOffice-Adresse:</strong> ${escapeHtml(request.address_id)}</p><p>Der automatische Immobilienvorschlagversand wurde beendet und die Abmeldung in onOffice dokumentiert.</p></div>`;
+    const customerHtml = `<!doctype html><html lang="de"><body style="margin:0;background:#EEF0F1;color:#2F343A;font-family:Arial,Helvetica,sans-serif"><div style="max-width:600px;margin:24px auto;background:#fff;border-top:4px solid #C8A35A;padding:36px 30px"><p style="margin:0 0 12px;color:#A47D39;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:bold">immobilien contor hasbargen</p><h1 style="font-size:28px;line-height:1.2;margin:0 0 18px;color:#2F343A">Alles klar – deine Abmeldung ist bestätigt.</h1><p style="font-size:16px;line-height:1.7">Hallo ${escapeHtml(displayName.split(/\s+/)[0] || '')},</p><p style="font-size:16px;line-height:1.7">wir haben deine Abmeldung erhalten und senden dir künftig keine weiteren Immobilienvorschläge mehr.</p><p style="font-size:15px;line-height:1.7;color:#596067">Falls du später wieder auf die Suche gehen möchtest, sind wir natürlich gerne für dich da. Eine kurze Nachricht genügt.</p><p style="font-size:15px;line-height:1.7">Herzliche Grüße<br><strong>dein Team vom immobilien contor hasbargen</strong></p></div></body></html>`;
+
+    const deliveries = await Promise.allSettled([
+      sendEmail({ to: internalRecipient, subject: `Käufer-Speed-Dating – Abmeldung von ${displayName}`, html: internalHtml, replyTo: request.email_normalized }),
+      sendEmail({ to: request.email_normalized, subject: 'Deine Abmeldung ist bestätigt', html: customerHtml })
+    ]);
+    deliveries.filter(result => result.status === 'rejected').forEach(result => console.error('Abmeldebestätigung-Mail', result.reason));
 
     return json(res, 200, { message: 'Alles klar – du bist abgemeldet. Wir senden dir künftig keine weiteren Immobilienvorschläge mehr.' });
   } catch (error) {

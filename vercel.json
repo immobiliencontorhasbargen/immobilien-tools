@@ -1,72 +1,23 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
-    {
-      "source": "/budget",
-      "destination": "/budget/",
-      "permanent": true
-    },
-    {
-      "source": "/traegt-sie-sich",
-      "destination": "/traegt-sie-sich/",
-      "permanent": true
-    },
-    {
-      "source": "/nebenkosten",
-      "destination": "/nebenkosten/",
-      "permanent": true
-    },
-    {
-      "source": "/kaeufer-speeddating",
-      "destination": "/kaeufer-speeddating/",
-      "permanent": true
-    },
-    {
-      "source": "/abmelden",
-      "destination": "/abmelden/",
-      "permanent": true
-    }
+    {"source":"/budget","destination":"/budget/","permanent":true},
+    {"source":"/traegt-sie-sich","destination":"/traegt-sie-sich/","permanent":true},
+    {"source":"/nebenkosten","destination":"/nebenkosten/","permanent":true},
+    {"source":"/kaeufer-speeddating","destination":"/kaeufer-speeddating/","permanent":true},
+    {"source":"/abmelden","destination":"/abmelden/","permanent":true}
   ],
   "rewrites": [
-    {
-      "source": "/budget/",
-      "destination": "https://tool-budgetrechner.vercel.app/"
-    },
-    {
-      "source": "/budget/:path*",
-      "destination": "https://tool-budgetrechner.vercel.app/:path*"
-    },
-    {
-      "source": "/traegt-sie-sich/",
-      "destination": "https://tool-traegt-sie-sich.vercel.app/"
-    },
-    {
-      "source": "/traegt-sie-sich/:path*",
-      "destination": "https://tool-traegt-sie-sich.vercel.app/:path*"
-    },
-    {
-      "source": "/nebenkosten/",
-      "destination": "https://tool-nebenkosten.vercel.app/"
-    },
-    {
-      "source": "/nebenkosten/:path*",
-      "destination": "https://tool-nebenkosten.vercel.app/:path*"
-    },
-    {
-      "source": "/kaeufer-speeddating/",
-      "destination": "/kaeufer-speeddating/index.html"
-    },
-    {
-      "source": "/abmelden/",
-      "destination": "/abmelden/index.html"
-    },
-    {
-      "source": "/kaeufer-speedating/",
-      "destination": "https://goodies-theta.vercel.app/kaeufer-speedating/"
-    },
-    {
-      "source": "/kaeufer-speedating/:path*",
-      "destination": "https://goodies-theta.vercel.app/kaeufer-speedating/:path*"
-    }
+    {"source":"/budget/","destination":"https://tool-budgetrechner.vercel.app/"},
+    {"source":"/budget/:path*","destination":"https://tool-budgetrechner.vercel.app/:path*"},
+    {"source":"/traegt-sie-sich/","destination":"https://tool-traegt-sie-sich.vercel.app/"},
+    {"source":"/traegt-sie-sich/:path*","destination":"https://tool-traegt-sie-sich.vercel.app/:path*"},
+    {"source":"/nebenkosten/","destination":"https://tool-nebenkosten.vercel.app/"},
+    {"source":"/nebenkosten/:path*","destination":"https://tool-nebenkosten.vercel.app/:path*"},
+    {"source":"/kaeufer-speeddating/","destination":"/api/kaeufer-speeddating-page"},
+    {"source":"/kaeufer-speeddating/index.html","destination":"/kaeufer-speeddating/index.html"},
+    {"source":"/abmelden/","destination":"/abmelden/index.html"},
+    {"source":"/kaeufer-speedating/","destination":"https://goodies-theta.vercel.app/kaeufer-speedating/"},
+    {"source":"/kaeufer-speedating/:path*","destination":"https://goodies-theta.vercel.app/kaeufer-speedating/:path*"}
   ]
 }
